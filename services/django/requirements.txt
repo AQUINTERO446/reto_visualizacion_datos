@@ -1,0 +1,11 @@
+django==2.2
+psycopg2
+django-debug-toolbar==2.2
+djangorestframework==3.11.0
+markdown
+coreapi
+Pygments
+django-filter
+django-guardian
+coverage
+django-rest-knox

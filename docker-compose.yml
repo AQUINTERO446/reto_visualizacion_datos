@@ -1,0 +1,63 @@
+version: '3'
+
+networks:
+    main_net:
+
+volumes:
+    postgres:
+
+services:
+    nginx: 
+        image: nginx:stable
+        volumes:
+          - ./services/nginx/config/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+          - 80:80
+          - 444:443
+        depends_on:
+          - django
+        networks:
+            - main_net
+
+    postgres:
+        image: postgres:9.6.17
+        volumes:
+            - postgres:/var/lib/postgresql/data
+        env_file: .secret
+        ports:
+            - "5433:5432"
+        networks:
+            - main_net
+
+    django:
+        build: 
+            context: ./services/django
+            dockerfile: Dockerfile
+        command: ["python","manage.py","runserver", "0.0.0.0:8000","--noreload"]
+        volumes:
+            - "./services/django:/api"
+            
+        depends_on:
+            - postgres
+        environment:
+            PYTHONPATH: /api
+            PYTHONUNBUFFERED: "True"
+            DEBUG: "True"
+        env_file: .secret
+        # ports:
+        #     - "8000:8000"
+        networks:
+            - main_net
+    cubejs:
+        build: ./services/cubejs
+        command: npm run dev
+        env_file:
+            - ./services/cubejs/.env
+        volumes:
+            - ./services/cubejs:/usr/src/app
+        expose:
+            - "4000"
+        networks:
+            - main_net
+
+    

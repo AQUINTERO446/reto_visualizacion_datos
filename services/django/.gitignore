@@ -1,0 +1,6 @@
+*.py[oc]
+__pycache__
+react/node_modules/*
+env.txt
+!api/core/static/react/.init
+api/core/static/react/*
