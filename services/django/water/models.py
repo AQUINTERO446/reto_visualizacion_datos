@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 
 class ReinstallationWaterService(models.Model):
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     disconnection = models.IntegerField()
     pending  = models.IntegerField()
 
@@ -12,7 +12,7 @@ class WaterSources(models.Model):
         ("RFR", "Rio Frío"),
         ("SUR", "Suratá"),
     )
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     location = models.CharField( 
         max_length = 20, 
         choices = LOCATION_CHOICES, 
@@ -30,7 +30,7 @@ class WaterProduction(models.Model):
         ("LFL", "La Flora"),
         ("TOT", "Total"),
     )
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     location = models.CharField( 
         max_length = 20, 
         choices = LOCATION_CHOICES, 
@@ -49,7 +49,7 @@ class Inventory(models.Model):
         ("MOR", "Morrorico"),
         ("LFL", "La Flora"),
     )
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     location = models.CharField( 
         max_length = 20, 
         choices = LOCATION_CHOICES, 
@@ -61,6 +61,6 @@ class Inventory(models.Model):
     disinfectan_estimated_duration = models.IntegerField()
 
 class DamageRate(models.Model):
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     parent_networks = models.IntegerField()
     rush = models.IntegerField()

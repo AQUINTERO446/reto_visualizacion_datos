@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 
 class Volume(models.Model):
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     entry = models.IntegerField()
     first_out  = models.IntegerField()
     second_out  = models.IntegerField()
@@ -10,7 +10,7 @@ class Volume(models.Model):
 
 
 class TargetVolumes(models.Model):
-    created_at = models.DateTimeField(default=now)
+    created_at = models.DateField(auto_now_add=True)
     atlatinco = models.IntegerField()
     guajira  = models.IntegerField()
     bolivar  = models.IntegerField()
