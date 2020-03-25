@@ -1,4 +1,4 @@
-from supplying.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate
+from water.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate
 from rest_framework import viewsets, permissions
 from .serializers import ReinstallationWaterServiceSerializer, WaterSourcesSerializer, WaterProductionSerializer, InventorySerializer, DamageRateSerializer
 

@@ -1,4 +1,4 @@
-from supplying.models import Metrolinea, Subpoena, Accidents, Injuries, Deaths
+from traffic.models import Metrolinea, Subpoena, Accidents, Injuries, Deaths
 from rest_framework import viewsets, permissions
 from .serializers import MetrolineaSerializer, SubpoenaSerializer, AccidentsSerializer, InjuriesSerializer, DeathsSerializer
 
