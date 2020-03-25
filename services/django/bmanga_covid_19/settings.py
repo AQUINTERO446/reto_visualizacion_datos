@@ -25,7 +25,10 @@ SECRET_KEY = '0h06!eyulrz&&8=cvy4-1r)1=9&+$!$uqlt9@u2%q4zhf$#%m7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['backend']
+ALLOWED_HOSTS = [
+    'backend',
+    'localhost'
+    ]
 
 
 # Application definition
