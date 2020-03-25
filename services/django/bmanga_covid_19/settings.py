@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'supplying',
     'traffic',
     'water',
+    'frontend'
 ]
 
 MIDDLEWARE = [

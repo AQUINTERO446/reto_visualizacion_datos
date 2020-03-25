@@ -5,4 +5,5 @@ urlpatterns = [
     path('', include('supplying.urls')),
     path('', include('traffic.urls')),
     path('', include('water.urls')),
+    path('', include('frontend.urls')),
 ]
