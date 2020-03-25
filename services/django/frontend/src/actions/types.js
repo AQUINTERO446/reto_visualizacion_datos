@@ -1,0 +1,3 @@
+export const GET_SECURITY = "GET_SECURITY";
+export const DELETE_SECURITY = "DELETE_SECURITY";
+export const ADD_SECURITY = "ADD_SECURITY";
