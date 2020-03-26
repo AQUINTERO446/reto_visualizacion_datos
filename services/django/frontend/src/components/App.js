@@ -6,8 +6,11 @@ import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 import Header from './layout/Header';
-import SecurityDashboard from './security/Dashboards';
 import Alerts from './layout/Alerts';
+
+// Dashboards
+import SecurityDashboard from './security/Dashboards';
+import SupplyingDashboard from './supplying/Dashboards';
 
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -31,6 +34,7 @@ class App extends Component {
                                 <Switch>
                                     <Route exact path="/" component={SecurityDashboard}/>
                                     <Route exact path="/security" component={SecurityDashboard}/>
+                                    <Route exact path="/supplying" component={SupplyingDashboard}/>
                                 </Switch>
                             </div>
                         </Fragment>

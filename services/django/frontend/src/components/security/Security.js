@@ -43,7 +43,7 @@ export class Security extends Component {
                             <button onClick={this.props.deleteSecurity.bind(this, security.id)}
                                 className="btn btn-danger btn-sm">
                                     { " " }
-                                    Delete
+                                    Eliminar
                             </button>
                         </td>
                     </tr>
