@@ -17,7 +17,7 @@ export class Security extends Component {
     render() {
         return (
             <Fragment>
-                <h2>Lista de Seguridad</h2>
+                <h2>Indicadores de seguridad</h2>
                 <table className="table table-striped">
                 <thead>
                     <tr>

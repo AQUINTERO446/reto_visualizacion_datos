@@ -32,7 +32,7 @@ export class Form extends Component {
         const { thefts_persons, thefts_commerce, personal_injuries, homicides, created_at } = this.state;
         return (
             <div className="card card-body mt-4 mb-4">
-                <h2>Agregar Registro de Seguridad</h2>
+                <h2>Agregar Indicador de Seguridad</h2>
                 <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                     <label>Hurtos a personas</label>
