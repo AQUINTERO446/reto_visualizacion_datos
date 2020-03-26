@@ -7,7 +7,6 @@ import AlertTemplate from "react-alert-template-basic";
 
 import Header from './layout/Header';
 import SecurityDashboard from './security/Dashboards';
-import CoexistenceDashboard from './coexistence/Dashboards';
 import Alerts from './layout/Alerts';
 
 import { Provider } from 'react-redux';
@@ -32,7 +31,6 @@ class App extends Component {
                                 <Switch>
                                     <Route exact path="/" component={SecurityDashboard}/>
                                     <Route exact path="/security" component={SecurityDashboard}/>
-                                    <Route exact path="/coexistence" component={CoexistenceDashboard}/>
                                 </Switch>
                             </div>
                         </Fragment>
