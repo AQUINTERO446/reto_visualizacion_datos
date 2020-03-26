@@ -14,16 +14,14 @@ export class Alerts extends Component {
     componentDidUpdate(prevProps) {
         const { error, alert, message } = this.props;
         if (error !== prevProps.error) {
-            console.log('test')
-            console.log(error.msg)
             for (var key in error.msg) {
                 alert.error(error.msg[key])
               }
         }
     
         if (message !== prevProps.message) {
-          if (message.deleteSecurity) alert.success(message.deleteSecurity);
-          if (message.addSecurity) alert.success(message.addSecurity);
+          if (message.delete) alert.success(message.delete);
+          if (message.add) alert.success(message.add);
           if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
         }
     }

@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 import Header from './layout/Header';
-import Dashboard from './security/Dashboards';
+import SecurityDashboard from './security/Dashboards';
+import CoexistenceDashboard from './coexistence/Dashboards';
 import Alerts from './layout/Alerts';
 
 import { Provider } from 'react-redux';
@@ -22,13 +24,19 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <AlertProvider template={AlertTemplate} {...alertOptions}>
-                    <Fragment>
-                        <Header />
-                        <Alerts />
-                        <div className="container">
-                            <Dashboard />
-                        </div>
-                    </Fragment>
+                    <Router>
+                        <Fragment>
+                            <Header />
+                            <Alerts />
+                            <div className="container">
+                                <Switch>
+                                    <Route exact path="/" component={SecurityDashboard}/>
+                                    <Route exact path="/security" component={SecurityDashboard}/>
+                                    <Route exact path="/coexistence" component={CoexistenceDashboard}/>
+                                </Switch>
+                            </div>
+                        </Fragment>
+                    </Router>
                 </AlertProvider>
             </Provider>
         )

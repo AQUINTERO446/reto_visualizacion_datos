@@ -4,9 +4,9 @@ import { GET, DELETE, ADD } from './types';
 import { createMessage, returnErrors } from "./messages";
 
 // GET SECURITY
-export const getSecurity = () => dispatch => {
+export const getCoexistence = () => dispatch => {
   axios
-  .get('/api/security/')
+  .get('/api/conv/')
   .then( res => {
       dispatch ({
           type: GET,
@@ -17,9 +17,9 @@ export const getSecurity = () => dispatch => {
 };
 
 // DELETE SECURITY
-export const deleteSecurity = id => dispatch => {
+export const deleteCoexistence = id => dispatch => {
   axios
-    .delete(`/api/security/${id}/`)
+    .delete(`/api/conv/${id}/`)
     .then(res => {
       dispatch(createMessage({ delete: "Indicador eliminado" }));
       dispatch({
@@ -31,9 +31,9 @@ export const deleteSecurity = id => dispatch => {
 };
 
 // ADD SECURITY
-export const addSecurity = (security) => dispatch => {
+export const addCoexistence = (conv) => dispatch => {
   axios
-    .post('/api/security/', security)
+    .post('/api/conv/', conv)
     .then(res => {
       dispatch(createMessage({ add: "Indicador Agregado" }));
       dispatch({

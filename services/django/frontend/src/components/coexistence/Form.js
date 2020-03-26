@@ -1,81 +1,81 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addSecurity } from '../../actions/security'
+import { addCoexistence } from '../../actions/coexistence'
 
 export class Form extends Component {
     state = {
-        thefts_persons: '',
-        thefts_commerce: '',
-        personal_injuries: '',
-        homicides: '',
+        contempts: '',
+        establishments: '',
+        underage: '',
+        domestic_violence: '',
         created_at: ''
     }
 
     static propTypes = {
-        addSecurity: PropTypes.func.isRequired
+        addCoexistence: PropTypes.func.isRequired
     };
 
     onChange = e => this.setState({ [e.target.name]: e.target.value });
 
     onSubmit = e => {
         e.preventDefault();
-        const { thefts_persons, thefts_commerce, personal_injuries, homicides, created_at } = this.state;
-        const security = { thefts_persons, thefts_commerce, personal_injuries, homicides, created_at };
-        this.props.addSecurity(security);
+        const { contempts, establishments, underage, domestic_violence, created_at } = this.state;
+        const coexistence = { contempts, establishments, underage, domestic_violence, created_at };
+        this.props.addCoexistence(coexistence);
         this.setState({
-            thefts_persons: '',
-            thefts_commerce: '',
-            personal_injuries: '',
-            homicides: '',
+            contempts: '',
+            establishments: '',
+            underage: '',
+            domestic_violence: '',
             created_at: ''
         });
       };
 
     render() {
-        const { thefts_persons, thefts_commerce, personal_injuries, homicides, created_at } = this.state;
+        const { contempts, establishments, underage, domestic_violence, created_at } = this.state;
         return (
             <div className="card card-body mt-4 mb-4">
-                <h2>Agregar Indicador de Seguridad</h2>
+                <h2>Agregar Indice de Convivencia</h2>
                 <form onSubmit={this.onSubmit}>
                 <div className="form-group">
-                    <label>Hurtos a personas</label>
+                    <label>Número de Desacatos a decretos de COVID-19</label>
                     <input
                     className="form-control"
                     type="number"
-                    name="thefts_persons"
+                    name="contempts"
                     onChange={this.onChange}
-                    value={thefts_persons}
+                    value={contempts}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Hurtos a comercio</label>
+                    <label>Establecimientos que incumplan decretos de COVID-19</label>
                     <input
                     className="form-control"
                     type="number"
-                    name="thefts_commerce"
+                    name="establishments"
                     onChange={this.onChange}
-                    value={thefts_commerce}
+                    value={establishments}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Lesiones personales</label>
+                    <label>Menores de edad que incumplan decretos COVID-19</label>
                     <input
                     className="form-control"
                     type="number"
-                    name="personal_injuries"
+                    name="underage"
                     onChange={this.onChange}
-                    value={personal_injuries}
+                    value={underage}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Homicidios</label>
+                    <label>Casos de violencia intrafamiliar atendidos</label>
                     <input
                     className="form-control"
                     type="number"
-                    name="homicides"
+                    name="domestic_violence"
                     onChange={this.onChange}
-                    value={homicides}
+                    value={domestic_violence}
                     />
                 </div>
                 <div className="form-group">
@@ -100,4 +100,4 @@ export class Form extends Component {
     }
 }
 
-export default connect(null, { addSecurity })(Form);
+export default connect(null, { addCoexistence })(Form);
