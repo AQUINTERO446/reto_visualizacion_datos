@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getCoexistence, deleteCoexistence } from '../../actions/coexistence';
+import { getCoexistence, deleteCoexistence } from '../../../actions/coexistence';
 
 export class Coexistence extends Component {
     static propTypes = {

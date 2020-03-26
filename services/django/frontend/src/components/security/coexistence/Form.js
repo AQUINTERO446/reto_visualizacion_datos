@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addCoexistence } from '../../actions/coexistence'
+import { addCoexistence } from '../../../actions/coexistence'
 
 export class Form extends Component {
     state = {
