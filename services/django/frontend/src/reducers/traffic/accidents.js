@@ -1,7 +1,7 @@
 import { GET, DELETE, ADD } from "../../actions/types.js";
 
 const initialState = {
-    metrolinea: []
+    accidents: []
 }
 
 export default function(state = initialState, action) {
@@ -9,17 +9,17 @@ export default function(state = initialState, action) {
         case GET:
             return {
                 ...state,
-                metrolinea: action.payload
+                accidents: action.payload
             };
         case DELETE:
             return {
                 ...state,
-                metrolinea: state.metrolinea.filter(metrolinea => metrolinea.id !== action.payload)
+                accidents: state.accidents.filter(accidents => accidents.id !== action.payload)
             };
         case ADD:
             return {
                 ...state,
-                metrolinea: [...state.metrolinea, action.payload]
+                accidents: [...state.accidents, action.payload]
             };
         default:
             return state;

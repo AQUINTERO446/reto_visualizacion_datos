@@ -1,7 +1,7 @@
 import { GET, DELETE, ADD } from "../../actions/types.js";
 
 const initialState = {
-    metrolinea: []
+    subpoena: []
 }
 
 export default function(state = initialState, action) {
@@ -9,17 +9,17 @@ export default function(state = initialState, action) {
         case GET:
             return {
                 ...state,
-                metrolinea: action.payload
+                subpoena: action.payload
             };
         case DELETE:
             return {
                 ...state,
-                metrolinea: state.metrolinea.filter(metrolinea => metrolinea.id !== action.payload)
+                subpoena: state.subpoena.filter(subpoena => subpoena.id !== action.payload)
             };
         case ADD:
             return {
                 ...state,
-                metrolinea: [...state.metrolinea, action.payload]
+                subpoena: [...state.subpoena, action.payload]
             };
         default:
             return state;
