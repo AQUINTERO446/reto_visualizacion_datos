@@ -1,7 +1,7 @@
-import { GET, DELETE, ADD } from "../actions/types.js";
+import { GET, DELETE, ADD } from "../../actions/types.js";
 
 const initialState = {
-    supplying: []
+    targetVolumes: []
 }
 
 export default function(state = initialState, action) {
@@ -9,17 +9,17 @@ export default function(state = initialState, action) {
         case GET:
             return {
                 ...state,
-                supplying: action.payload
+                targetVolumes: action.payload
             };
         case DELETE:
             return {
                 ...state,
-                supplying: state.supplying.filter(supplying => supplying.id !== action.payload)
+                targetVolumes: state.targetVolumes.filter(targetVolumes => targetVolumes.id !== action.payload)
             };
         case ADD:
             return {
                 ...state,
-                supplying: [...state.supplying, action.payload]
+                targetVolumes: [...state.targetVolumes, action.payload]
             };
         default:
             return state;

@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-import { GET, DELETE, ADD } from './types';
-import { createMessage, returnErrors } from "./messages";
+import { GET, DELETE, ADD } from '../types';
+import { createMessage, returnErrors } from "../messages";
 
 // GET SECURITY
-export const getCoexistence = () => dispatch => {
+export const getTargetVolumes = () => dispatch => {
   axios
-  .get('/api/conv/')
+  .get('/api/target_volumes/')
   .then( res => {
       dispatch ({
           type: GET,
@@ -17,9 +17,9 @@ export const getCoexistence = () => dispatch => {
 };
 
 // DELETE SECURITY
-export const deleteCoexistence = id => dispatch => {
+export const deleteTargetVolumes = id => dispatch => {
   axios
-    .delete(`/api/conv/${id}/`)
+    .delete(`/api/target_volumes/${id}/`)
     .then(res => {
       dispatch(createMessage({ delete: "Indicador eliminado" }));
       dispatch({
@@ -31,9 +31,9 @@ export const deleteCoexistence = id => dispatch => {
 };
 
 // ADD SECURITY
-export const addCoexistence = (conv) => dispatch => {
+export const addTargetVolumes = (conv) => dispatch => {
   axios
-    .post('/api/conv/', conv)
+    .post('/api/target_volumes/', conv)
     .then(res => {
       dispatch(createMessage({ add: "Indicador Agregado" }));
       dispatch({

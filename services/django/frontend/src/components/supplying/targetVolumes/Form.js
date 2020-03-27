@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addTargetVolumes } from '../../../actions/targetVolumes'
+import { addTargetVolumes } from '../../../actions/supplying/targetVolumes'
 
 export class Form extends Component {
     state = {

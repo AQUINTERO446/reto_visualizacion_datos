@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getSecurity, deleteSecurity } from '../../actions/security';
+import { getSecurity, deleteSecurity } from '../../actions/security/security';
 
 export class Security extends Component {
     static propTypes = {

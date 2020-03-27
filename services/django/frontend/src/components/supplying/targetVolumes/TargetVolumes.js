@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getTargetVolumes, deleteTargetVolumes } from '../../../actions/targetVolumes';
+import { getTargetVolumes, deleteTargetVolumes } from '../../../actions/supplying/targetVolumes';
 
 export class TargetVolumes extends Component {
     static propTypes = {

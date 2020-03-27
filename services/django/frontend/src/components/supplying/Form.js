@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addSupplying } from '../../actions/supplying'
+import { addSupplying } from '../../actions/supplying/supplying'
 
 export class Form extends Component {
     state = {

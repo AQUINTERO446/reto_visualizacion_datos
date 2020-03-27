@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import security from './security';
-import coexistence from './coexistence';
-import supplying from './supplying';
-import targetVolumes from './targetVolumes';
+import security from './security/security';
+import coexistence from './security/coexistence';
+import supplying from './supplying/supplying';
+import targetVolumes from './supplying/targetVolumes';
 import errors from './errors';
 import messages from "./messages";
 

@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../actions/types.js";
+import { GET, DELETE, ADD } from "../../actions/types.js";
 
 const initialState = {
     security: []

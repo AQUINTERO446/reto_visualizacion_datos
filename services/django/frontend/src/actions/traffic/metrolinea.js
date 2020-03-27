@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-import { GET, DELETE, ADD } from './types';
-import { createMessage, returnErrors } from "./messages";
+import { GET, DELETE, ADD } from '../types';
+import { createMessage, returnErrors } from "../messages";
 
 // GET SECURITY
-export const getTargetVolumes = () => dispatch => {
+export const getMetrolinea = () => dispatch => {
   axios
-  .get('/api/target_volumes/')
+  .get('/api/metrolinea/')
   .then( res => {
       dispatch ({
           type: GET,
@@ -17,9 +17,9 @@ export const getTargetVolumes = () => dispatch => {
 };
 
 // DELETE SECURITY
-export const deleteTargetVolumes = id => dispatch => {
+export const deleteMetrolinea = id => dispatch => {
   axios
-    .delete(`/api/target_volumes/${id}/`)
+    .delete(`/api/metrolinea/${id}/`)
     .then(res => {
       dispatch(createMessage({ delete: "Indicador eliminado" }));
       dispatch({
@@ -31,9 +31,9 @@ export const deleteTargetVolumes = id => dispatch => {
 };
 
 // ADD SECURITY
-export const addTargetVolumes = (conv) => dispatch => {
+export const addMetrolinea = (conv) => dispatch => {
   axios
-    .post('/api/target_volumes/', conv)
+    .post('/api/metrolinea/', conv)
     .then(res => {
       dispatch(createMessage({ add: "Indicador Agregado" }));
       dispatch({

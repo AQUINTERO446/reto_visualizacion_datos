@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { GET, DELETE, ADD } from './types';
-import { createMessage, returnErrors } from "./messages";
+import { GET, DELETE, ADD } from '../types';
+import { createMessage, returnErrors } from "../messages";
 
 // GET SECURITY
 export const getSupplying = () => dispatch => {
