@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET, DELETE, ADD } from '../types';
+import { GET_SUPPLYING, DELETE_SUPPLYING, ADD_SUPPLYING } from '../types';
 import { createMessage, returnErrors } from "../messages";
 
 // GET SECURITY
@@ -9,7 +9,7 @@ export const getSupplying = () => dispatch => {
   .get('/api/volume/')
   .then( res => {
       dispatch ({
-          type: GET,
+          type: GET_SUPPLYING,
           payload: res.data
       });
   })
@@ -23,7 +23,7 @@ export const deleteSupplying = id => dispatch => {
     .then(res => {
       dispatch(createMessage({ delete: "Indicador eliminado" }));
       dispatch({
-        type: DELETE,
+        type: DELETE_SUPPLYING,
         payload: id
       });
     })
@@ -37,7 +37,7 @@ export const addSupplying = (conv) => dispatch => {
     .then(res => {
       dispatch(createMessage({ add: "Indicador Agregado" }));
       dispatch({
-        type: ADD,
+        type: ADD_SUPPLYING,
         payload: res.data
       });
     })

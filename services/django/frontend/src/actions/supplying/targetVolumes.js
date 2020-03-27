@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET, DELETE, ADD } from '../types';
+import { GET_TARGET_VOLUME, DELETE_TARGET_VOLUME, ADD_TARGET_VOLUME } from '../types';
 import { createMessage, returnErrors } from "../messages";
 
 // GET SECURITY
@@ -9,7 +9,7 @@ export const getTargetVolumes = () => dispatch => {
   .get('/api/target_volumes/')
   .then( res => {
       dispatch ({
-          type: GET,
+          type: GET_TARGET_VOLUME,
           payload: res.data
       });
   })
@@ -23,7 +23,7 @@ export const deleteTargetVolumes = id => dispatch => {
     .then(res => {
       dispatch(createMessage({ delete: "Indicador eliminado" }));
       dispatch({
-        type: DELETE,
+        type: DELETE_TARGET_VOLUME,
         payload: id
       });
     })
@@ -37,7 +37,7 @@ export const addTargetVolumes = (conv) => dispatch => {
     .then(res => {
       dispatch(createMessage({ add: "Indicador Agregado" }));
       dispatch({
-        type: ADD,
+        type: ADD_TARGET_VOLUME,
         payload: res.data
       });
     })

@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../../actions/types.js";
+import { GET_ACCIDENT, DELETE_ACCIDENT, ADD_ACCIDENT } from "../../actions/types.js";
 
 const initialState = {
     accidents: []
@@ -6,17 +6,17 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case GET:
+        case GET_ACCIDENT:
             return {
                 ...state,
                 accidents: action.payload
             };
-        case DELETE:
+        case DELETE_ACCIDENT:
             return {
                 ...state,
                 accidents: state.accidents.filter(accidents => accidents.id !== action.payload)
             };
-        case ADD:
+        case ADD_ACCIDENT:
             return {
                 ...state,
                 accidents: [...state.accidents, action.payload]

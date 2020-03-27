@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../../actions/types.js";
+import { GET_SECURITY, DELETE_SECURITY, ADD_SECURITY } from "../../actions/types.js";
 
 const initialState = {
     security: []
@@ -6,17 +6,17 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case GET:
+        case GET_SECURITY:
             return {
                 ...state,
                 security: action.payload
             };
-        case DELETE:
+        case DELETE_SECURITY:
             return {
                 ...state,
                 security: state.security.filter(security => security.id !== action.payload)
             };
-        case ADD:
+        case ADD_SECURITY:
             return {
                 ...state,
                 security: [...state.security, action.payload]

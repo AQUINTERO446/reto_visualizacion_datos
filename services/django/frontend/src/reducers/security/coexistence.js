@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../../actions/types.js";
+import { GET_COEXISTENCE, DELETE_COEXISTENCE, ADD_COEXISTENCE } from "../../actions/types.js";
 
 const initialState = {
     coexistence: []
@@ -6,17 +6,17 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case GET:
+        case GET_COEXISTENCE:
             return {
                 ...state,
                 coexistence: action.payload
             };
-        case DELETE:
+        case DELETE_COEXISTENCE:
             return {
                 ...state,
                 coexistence: state.coexistence.filter(coexistence => coexistence.id !== action.payload)
             };
-        case ADD:
+        case ADD_COEXISTENCE:
             return {
                 ...state,
                 coexistence: [...state.coexistence, action.payload]

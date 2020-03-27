@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../../actions/types.js";
+import { GET_SUPPLYING, DELETE_SUPPLYING, ADD_SUPPLYING } from "../../actions/types.js";
 
 const initialState = {
     supplying: []
@@ -6,17 +6,17 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case GET:
+        case GET_SUPPLYING:
             return {
                 ...state,
                 supplying: action.payload
             };
-        case DELETE:
+        case DELETE_SUPPLYING:
             return {
                 ...state,
                 supplying: state.supplying.filter(supplying => supplying.id !== action.payload)
             };
-        case ADD:
+        case ADD_SUPPLYING:
             return {
                 ...state,
                 supplying: [...state.supplying, action.payload]

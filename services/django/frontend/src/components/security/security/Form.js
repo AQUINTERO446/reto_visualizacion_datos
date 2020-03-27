@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addSecurity } from '../../actions/security/security'
+import { addSecurity } from '../../../actions/security/security'
 
 export class Form extends Component {
     state = {

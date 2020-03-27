@@ -1,4 +1,4 @@
-import { GET, DELETE, ADD } from "../../actions/types.js";
+import { GET_METROLINEA, DELETE_METROLINEA, ADD_METROLINEA } from "../../actions/types.js";
 
 const initialState = {
     metrolinea: []
@@ -6,17 +6,17 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case GET:
+        case GET_METROLINEA:
             return {
                 ...state,
                 metrolinea: action.payload
             };
-        case DELETE:
+        case DELETE_METROLINEA:
             return {
                 ...state,
                 metrolinea: state.metrolinea.filter(metrolinea => metrolinea.id !== action.payload)
             };
-        case ADD:
+        case ADD_METROLINEA:
             return {
                 ...state,
                 metrolinea: [...state.metrolinea, action.payload]

@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
-import Form from './Form';
-import Security from './Security';
+import SecurityDashboards from './security/Dashboards';
 import CoexistenceDashboards from './coexistence/Dashboards';
 
 export default function Dashboardss() {
     return (
         <Fragment>
-            <Form />
-            <Security />
+            <SecurityDashboards />
             <CoexistenceDashboards />
         </Fragment>
     )
