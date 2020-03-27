@@ -52,7 +52,6 @@ export class Form extends Component {
                         <option value="BOS">Bosconia</option>
                         <option value="MOR">Morrorico</option>
                         <option value="LFL">La Flora</option>
-                        <option value="TOT">Total</option>
                     </select>
                 </div>
                 <div className="form-group">

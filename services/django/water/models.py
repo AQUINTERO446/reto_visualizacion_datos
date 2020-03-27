@@ -28,7 +28,6 @@ class WaterProduction(models.Model):
         ("BOS", "Bosconia"),
         ("MOR", "Morrorico"),
         ("LFL", "La Flora"),
-        ("TOT", "Total"),
     )
     created_at = models.DateField(default=datetime.date.today)
     location = models.CharField( 
