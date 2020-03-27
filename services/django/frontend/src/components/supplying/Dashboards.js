@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 import Form from './Form';
 import Supplying from './Supplying';
-// import CoexistenceDashboards from '../coexistence/Dashboards';
+import TargetVolumesDashboards from './targetVolumes/Dashboards';
 
 export default function Dashboardss() {
     return (
         <Fragment>
             <Form />
             <Supplying />
-            {/* <CoexistenceDashboards /> */}
+            <TargetVolumesDashboards />
         </Fragment>
     )
 }
