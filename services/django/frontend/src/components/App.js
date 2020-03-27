@@ -12,6 +12,7 @@ import Alerts from './layout/Alerts';
 import SecurityDashboard from './security/Dashboards';
 import SupplyingDashboard from './supplying/Dashboards';
 import TrafficDashboards from './traffic/Dashboards';
+import WaterDashboards from './water/Dashboards';
 
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -37,6 +38,7 @@ class App extends Component {
                                     <Route exact path="/security" component={SecurityDashboard}/>
                                     <Route exact path="/supplying" component={SupplyingDashboard}/>
                                     <Route exact path="/traffic" component={TrafficDashboards}/>
+                                    <Route exact path="/water" component={WaterDashboards}/>
                                 </Switch>
                             </div>
                         </Fragment>
