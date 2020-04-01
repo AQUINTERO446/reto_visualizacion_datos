@@ -17,6 +17,8 @@ import inventory from './water/inventory';
 import reinstallationWaterService from './water/reinstallationWaterService';
 import waterProduction from './water/waterProduction';
 import waterSources from './water/waterSources';
+import globalParameters from './water/globalParameters';
+
 import errors from './errors';
 import messages from "./messages";
 
@@ -35,6 +37,7 @@ export default combineReducers({
     reinstallationWaterService,
     waterProduction,
     waterSources,
+    globalParameters,
     errors,
     messages,
 });

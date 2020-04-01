@@ -4,6 +4,8 @@ import DamageRate from './damageRate/Dashboards';
 import WaterSources from './waterSources/Dashboards';
 import WaterProduction from './waterProduction/Dashboards';
 import InventoryDashboards from './inventory/Dashboards';
+import GlobalParametersDashboards from './globalParameters/Dashboards';
+
 
 export default function Dashboardss() {
     return (
@@ -13,6 +15,7 @@ export default function Dashboardss() {
             <WaterSources />
             <WaterProduction />
             <InventoryDashboards />
+            <GlobalParametersDashboards />
         </Fragment>
     )
 }

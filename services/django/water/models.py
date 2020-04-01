@@ -39,6 +39,9 @@ class WaterProduction(models.Model):
     flow_treated = models.IntegerField()
     flow_delivered = models.IntegerField()
     daily_production = models.IntegerField()
+
+class GlobalParameters(models.Model):
+    created_at = models.DateField(default=datetime.date.today)
     consumption_per_capita = models.IntegerField()
 
 class Inventory(models.Model):

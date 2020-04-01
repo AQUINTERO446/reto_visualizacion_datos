@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from water.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate
+from water.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate, GlobalParameters
 
 # ReinstallationWaterService Serializer
 class ReinstallationWaterServiceSerializer(serializers.ModelSerializer):
@@ -26,6 +26,13 @@ class WaterProductionSerializer(serializers.ModelSerializer):
 class InventorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Inventory
+        fields = '__all__'
+        read_only_fields = ['id']
+
+# GlobalParameters Serializer
+class GlobalParametersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GlobalParameters
         fields = '__all__'
         read_only_fields = ['id']
 

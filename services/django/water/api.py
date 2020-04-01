@@ -1,6 +1,6 @@
-from water.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate
+from water.models import ReinstallationWaterService, WaterSources, WaterProduction, Inventory, DamageRate, GlobalParameters
 from rest_framework import viewsets, permissions
-from .serializers import ReinstallationWaterServiceSerializer, WaterSourcesSerializer, WaterProductionSerializer, InventorySerializer, DamageRateSerializer
+from .serializers import ReinstallationWaterServiceSerializer, WaterSourcesSerializer, WaterProductionSerializer, InventorySerializer, DamageRateSerializer, GlobalParametersSerializer
 
 # ReinstallationWaterService Viewset
 class ReinstallationWaterServiceViewset(viewsets.ModelViewSet):
@@ -33,6 +33,14 @@ class InventoryViewset(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = InventorySerializer
+
+# GlobalParameters Viewset
+class GlobalParametersViewset(viewsets.ModelViewSet):
+    queryset = GlobalParameters.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = GlobalParametersSerializer
 
 # DamageRate Viewset
 class DamageRateViewset(viewsets.ModelViewSet):
