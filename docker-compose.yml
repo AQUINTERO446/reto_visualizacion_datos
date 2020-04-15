@@ -5,6 +5,9 @@ networks:
 
 volumes:
     postgres:
+    redis_data:
+    node:
+    cube:
 
 services:
     nginx: 
@@ -25,7 +28,7 @@ services:
             - postgres:/var/lib/postgresql/data
         env_file: .secret
         ports:
-            - "5433:5432"
+            - "5432:5432"
         networks:
             - main_net
 
@@ -33,7 +36,7 @@ services:
         build: 
             context: ./services/django
             dockerfile: Dockerfile
-        command: ["python","manage.py","runserver", "0.0.0.0:8000","--noreload"]
+        command: ["python","manage.py","runserver", "0.0.0.0:8000", "--noreload"]
         volumes:
             - "./services/django:/api"
             
@@ -44,8 +47,8 @@ services:
             PYTHONUNBUFFERED: "True"
             DEBUG: "True"
         env_file: .secret
-        # ports:
-        #     - "8000:8000"
+        ports:
+            - "8000:8000"
         networks:
             - main_net
     cubejs:
@@ -55,9 +58,39 @@ services:
             - ./services/cubejs/.env
         volumes:
             - ./services/cubejs:/usr/src/app
-        expose:
-            - "4000"
+            # - cube:/usr/src/app/node_modules
+        depends_on: 
+            - redis
+        ports:
+            - "4000:4000"
         networks:
             - main_net
 
+    frontend:
+        image: frontend:dev
+        build: 
+            context: ./services/django
+            dockerfile: Dockerfile.frontend
+        command: npm run dev
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+        volumes:
+            - ./services/django:/usr/src/app
+            - node:/usr/src/app/node_modules
+            # - ./services/django/logs:/root/.npm/_logs
+        expose:
+            - "9000"
+        networks:
+            - main_net
+    
+    redis:
+        image: redis:3.2-alpine
+        restart: always
+        volumes:
+            - redis_data:/data
+        expose:
+            - "6379"
+        networks:
+            - main_net 
     

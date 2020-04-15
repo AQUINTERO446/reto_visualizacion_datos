@@ -1,7 +1,2 @@
-node_modules
-.DS_Store
-dist
 .env
-
-.package-lock.json
-dump.rdb
+node_modules
