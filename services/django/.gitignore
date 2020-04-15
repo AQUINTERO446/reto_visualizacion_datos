@@ -1,5 +1,5 @@
 node_modules
-
+static/*
 ### Django ###
 *.log
 *.pot
@@ -125,4 +125,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-./frontend/static/frontend/main.js
+frontend/static/frontend/main.js

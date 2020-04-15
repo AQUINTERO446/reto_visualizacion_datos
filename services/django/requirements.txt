@@ -9,3 +9,4 @@ django-filter
 django-guardian
 coverage
 django-rest-knox
+gunicorn
